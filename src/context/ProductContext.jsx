@@ -40,10 +40,8 @@ export const ProductProvider = ({ children }) => {
   };
 
   const deleteItem = (id) => {
-    if (window.confirm("Are you sure you want to delete this?")) {
       const filtered = items.filter(i => i.id !== id);
       syncStorage(filtered);
-    }
   };
 
   return (
