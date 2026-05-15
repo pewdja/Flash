@@ -1,3 +1,7 @@
+/**
+ * [Buford] - "It's a navigation bar. Don't make a big deal out of it."
+ * Simplified the header and navigation links.
+ */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { LayoutDashboard, PlusCircle, ListOrdered } from 'lucide-react';

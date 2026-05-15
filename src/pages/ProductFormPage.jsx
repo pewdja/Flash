@@ -1,3 +1,7 @@
+/**
+ * [Isabella] - "Whatcha doin?"
+ * Added labels and accessibility hooks to the product form.
+ */
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useProductData } from '../context/ProductContext.jsx';

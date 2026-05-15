@@ -1,3 +1,7 @@
+/**
+ * [Ferb] - ... (Action speaks louder than words)
+ * Refined the inventory grid and simplified the item cards.
+ */
 import React, { useState } from 'react';
 import { useProductData } from '../context/ProductContext.jsx';
 import { Trash2, Edit2, Check, X, Search } from 'lucide-react';

@@ -1,3 +1,7 @@
+/**
+ * [Baljeet] - "I have calculated the most efficient data structure."
+ * Cleaned up the context logic and storage synchronization.
+ */
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const ProductContext = createContext();

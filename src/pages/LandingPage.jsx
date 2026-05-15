@@ -1,3 +1,7 @@
+/**
+ * [Phineas] - "Ferb, I know what we're going to build today!"
+ * Redesigned the landing page to be a practical dashboard.
+ */
 import React from 'react';
 import { useProductData } from '../context/ProductContext.jsx';
 import { ShoppingBag, TrendingUp, Users, Package } from 'lucide-react';
