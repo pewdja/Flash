@@ -6,24 +6,23 @@ export const ProductProvider = ({ children }) => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Load from storage on mount
   useEffect(() => {
-    const saved = localStorage.getItem('swift_admin_products');
+    const saved = localStorage.getItem('sa_inventory_data');
     if (saved) {
       try {
         setItems(JSON.parse(saved));
       } catch (err) {
-        console.error("Error parsing localstorage data", err);
+        console.error("Storage parse error:", err);
       }
     }
     setLoading(false);
   }, []);
 
-  // Helper to save to storage
   const syncStorage = (newList) => {
-    localStorage.setItem('swift_admin_products', JSON.stringify(newList));
+    localStorage.setItem('sa_inventory_data', JSON.stringify(newList));
     setItems(newList);
   };
+
 
   const addItem = (data) => {
     const newItem = {
@@ -58,7 +57,7 @@ export const ProductProvider = ({ children }) => {
   );
 };
 
-// This is the only hook we need
+// Custom hook for accessing product data
 export const useProductData = () => {
   const context = useContext(ProductContext);
   if (!context) throw new Error('useProductData must be inside a ProductProvider');

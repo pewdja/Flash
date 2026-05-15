@@ -6,7 +6,6 @@ export default function ProductFormPage() {
   const { addItem } = useProductData();
   const navigate = useNavigate();
   
-  // Individual fields are more common for human-written code
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
   const [desc, setDesc] = useState('');

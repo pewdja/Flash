@@ -22,7 +22,7 @@ const renderWithProviders = (ui) => {
 
 describe('ProductDetailsPage', () => {
   beforeEach(() => {
-    localStorage.setItem('swift_admin_products', JSON.stringify(sampleProducts));
+    localStorage.setItem('sa_inventory_data', JSON.stringify(sampleProducts));
   });
 
   it('renders products from localStorage', () => {

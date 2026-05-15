@@ -17,11 +17,10 @@ export default function LandingPage() {
     <div className="p-8 md:p-16 text-left">
       <div className="max-w-4xl">
         <h1 className="text-5xl font-black mb-6 text-gray-900 tracking-tight leading-tight">
-          Manage your <span className="text-blue-600">inventory</span> <br />
-          
+          Manage your <span className="text-blue-600">inventory</span>
         </h1>
         <p className="text-xl text-gray-500 mb-12 max-w-2xl leading-relaxed">
-          SwiftAdmin
+          The ultimate control center for your shop.
         </p>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-16">
