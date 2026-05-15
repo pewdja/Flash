@@ -1,4 +1,3 @@
-# sa-inventory
 
 Minimalist inventory tool. Built with React + Vite + Tailwind.
 
