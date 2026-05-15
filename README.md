@@ -9,12 +9,12 @@ Minimalist inventory tool. Built with React + Vite + Tailwind.
 - Responsive layout
 
 ## Dev
-```bash
+```
 npm install
 npm run dev
 ```
 
 ## Test
-```bash
+```
 npm test
 ```
