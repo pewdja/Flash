@@ -27,8 +27,7 @@ export const ProductProvider = ({ children }) => {
   const addItem = (data) => {
     const newItem = {
       ...data,
-      id: "prod_" + Date.now(),
-      createdAt: new Date().toISOString(),
+      id: Date.now().toString()
     };
     syncStorage([newItem, ...items]);
   };
@@ -57,7 +56,6 @@ export const ProductProvider = ({ children }) => {
   );
 };
 
-// Custom hook for accessing product data
 export const useProductData = () => {
   const context = useContext(ProductContext);
   if (!context) throw new Error('useProductData must be inside a ProductProvider');

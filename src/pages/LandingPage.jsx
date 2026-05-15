@@ -6,41 +6,48 @@ import { Link } from 'react-router-dom';
 export default function LandingPage() {
   const { count } = useProductData();
 
-  const stats = [
-    { label: 'Total Products', value: count, icon: Package, color: 'text-blue-600' },
-    { label: 'Sales Today', value: '$1.2k', icon: TrendingUp, color: 'text-green-600' },
-    { label: 'Active Users', value: '42', icon: Users, color: 'text-purple-600' },
-    { label: 'Pending', value: '7', icon: ShoppingBag, color: 'text-orange-600' },
-  ];
-
   return (
-    <div className="p-8 md:p-16 text-left">
+    <div className="p-8 md:p-12">
       <div className="max-w-4xl">
-        <h1 className="text-5xl font-black mb-6 text-gray-900 tracking-tight leading-tight">
-          Manage your <span className="text-blue-600">inventory</span>
+        <h1 className="text-4xl font-bold mb-4 text-gray-900 px-2 border-l-4 border-blue-600">
+          Inventory Dashboard
         </h1>
-        <p className="text-xl text-gray-500 mb-12 max-w-2xl leading-relaxed">
-          The ultimate control center for your shop.
+        <p className="text-lg text-gray-600 mb-10">
+          Track products and stock levels from one place.
         </p>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-16">
-          {stats.map((stat) => (
-            <div key={stat.label} className="p-6 border-2 border-gray-50 rounded-3xl bg-white shadow-sm hover:border-blue-100 transition-colors">
-              <div className={`mb-3 ${stat.color}`}>
-                <stat.icon className="w-6 h-6" />
-              </div>
-              <p className="text-3xl font-black text-gray-900 mb-1">{stat.value}</p>
-              <h3 className="text-gray-400 text-xs font-bold uppercase tracking-widest">{stat.label}</h3>
-            </div>
-          ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          <div className="p-5 border border-gray-200 rounded shadow-sm bg-white">
+            <Package className="w-5 h-5 text-blue-600 mb-2" />
+            <p className="text-2xl font-bold">{count}</p>
+            <h3 className="text-gray-500 text-sm">Total Items</h3>
+          </div>
+          
+          <div className="p-5 border border-gray-200 rounded shadow-sm bg-white">
+            <TrendingUp className="w-5 h-5 text-green-600 mb-2" />
+            <p className="text-2xl font-bold">$1,240</p>
+            <h3 className="text-gray-500 text-sm">Today's Sales</h3>
+          </div>
+
+          <div className="p-5 border border-gray-200 rounded shadow-sm bg-white">
+            <Users className="w-5 h-5 text-purple-600 mb-2" />
+            <p className="text-2xl font-bold">42</p>
+            <h3 className="text-gray-500 text-sm">Active</h3>
+          </div>
+
+          <div className="p-5 border border-gray-200 rounded shadow-sm bg-white">
+            <ShoppingBag className="w-5 h-5 text-orange-600 mb-2" />
+            <p className="text-2xl font-bold">7</p>
+            <h3 className="text-gray-500 text-sm">Pending</h3>
+          </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-6">
-          <Link to="/products" className="bg-blue-600 text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-blue-700 transition shadow-lg shadow-blue-200 text-center">
+        <div className="flex gap-4">
+          <Link to="/products" className="bg-gray-800 text-white px-8 py-3 rounded font-semibold text-sm hover:bg-gray-900 shadow-md">
             View Inventory
           </Link>
-          <Link to="/add-product" className="bg-white text-gray-900 border-2 border-gray-100 px-10 py-5 rounded-2xl font-black text-lg hover:bg-gray-50 transition text-center">
-            New Item
+          <Link to="/add-product" className="bg-white text-gray-800 border border-gray-300 px-8 py-3 rounded font-semibold text-sm hover:bg-gray-50">
+            Add New Item
           </Link>
         </div>
       </div>

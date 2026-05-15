@@ -36,7 +36,7 @@ describe('ProductDetailsPage', () => {
   it('filters products based on search input', () => {
     renderWithProviders(<ProductDetailsPage />);
     
-    const searchInput = screen.getByPlaceholderText(/Search items/i);
+    const searchInput = screen.getByPlaceholderText(/Search by name/i);
     fireEvent.change(searchInput, { target: { value: 'iPhone' } });
 
     expect(screen.getByText('iPhone 15')).toBeInTheDocument();
@@ -46,7 +46,7 @@ describe('ProductDetailsPage', () => {
   it('removes a product when delete button is clicked', async () => {
     renderWithProviders(<ProductDetailsPage />);
     
-    const deleteButtons = screen.getAllByRole('button', { name: /Delete product/i });
+    const deleteButtons = screen.getAllByTitle(/Remove item/i);
     fireEvent.click(deleteButtons[0]);
 
     expect(screen.queryByText('iPhone 15')).not.toBeInTheDocument();
@@ -56,13 +56,13 @@ describe('ProductDetailsPage', () => {
   it('updates product price through inline editing', async () => {
     renderWithProviders(<ProductDetailsPage />);
     
-    const editBtns = screen.getAllByRole('button', { name: /Edit price/i });
+    const editBtns = screen.getAllByTitle(/Edit price/i);
     fireEvent.click(editBtns[0]);
 
     const priceInput = screen.getByDisplayValue('999');
     fireEvent.change(priceInput, { target: { value: '1099' } });
     
-    const saveBtn = screen.getByRole('button', { name: /Save price/i });
+    const saveBtn = screen.getByTitle(/Save/i);
     fireEvent.click(saveBtn);
 
     expect(screen.getByText(/\$1099/i)).toBeInTheDocument();

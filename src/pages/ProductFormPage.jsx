@@ -37,54 +37,52 @@ export default function ProductFormPage() {
 
   return (
     <div className="p-8 max-w-lg mx-auto">
-      <h2 className="text-2xl font-bold mb-6">New Product</h2>
+      <h2 className="text-2xl font-bold mb-4">Add New Item</h2>
       
       {error && (
-        <div className="bg-red-50 text-red-700 p-3 rounded-lg mb-6 border border-red-200">
+        <div className="bg-red-100 text-red-900 p-3 rounded mb-4">
           {error}
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-5 shadow-xl p-8 border rounded-2xl bg-white">
-        <div>
-          <label className="block text-gray-600 mb-1 text-sm font-semibold uppercase tracking-wider">Name</label>
+      <form onSubmit={handleSubmit} className="p-6 border border-gray-200 rounded-lg bg-gray-50">
+        <div className="mb-4">
+          <label htmlFor="name" className="block text-gray-700 mb-1 font-medium">Product Name</label>
           <input
+            id="name"
             type="text"
-            className="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none bg-gray-50"
+            className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500 bg-white"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="e.g. Leather Jacket"
           />
         </div>
 
-        <div>
-          <label className="block text-gray-600 mb-1 text-sm font-semibold uppercase tracking-wider">Price (KSH/USD)</label>
+        <div className="mb-4">
+          <label htmlFor="price" className="block text-gray-700 mb-1 font-medium">Price</label>
           <input
+            id="price"
             type="text"
-            className="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none bg-gray-50"
+            className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500 bg-white"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
-            placeholder="0.00"
           />
         </div>
 
-        <div>
-          <label className="block text-gray-600 mb-1 text-sm font-semibold uppercase tracking-wider">About this Product</label>
+        <div className="mb-6">
+          <label htmlFor="desc" className="block text-gray-700 mb-1 font-medium">Description</label>
           <textarea
-            className="w-full border p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none bg-gray-50 h-28"
+            id="desc"
+            className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:border-blue-500 bg-white h-24"
             value={desc}
             onChange={(e) => setDesc(e.target.value)}
-            placeholder="Tell us about it..."
           ></textarea>
         </div>
 
-        
-
         <button 
           type="submit" 
-          className="w-full bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 transition-all active:scale-95"
+          className="w-full bg-blue-600 text-white font-bold py-3 rounded hover:bg-blue-700 shadow-sm"
         >
-          Create Product
+          Add to Inventory
         </button>
       </form>
     </div>
